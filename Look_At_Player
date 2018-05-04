@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LooktoTarget : MonoBehaviour {
+	[SerializeField]
+	private Transform playerTransform;
+	private Transform selfTransform;
+	private Vector3 lookpoint;
+	// Use this for initialization
+	void Start () {
+		selfTransform = transform;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		lookpoint = playerTransform.position;
+		lookpoint.y = selfTransform.position.y;
+		transform.LookAt (lookpoint);
+	
+	}
+}
